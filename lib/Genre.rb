@@ -1,5 +1,5 @@
 class Genre
-  extend Findable
+  extend Findable::ClassMethods
   attr_accessor :name, :songs
   @@all = []
   def initialize(name)

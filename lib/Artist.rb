@@ -1,6 +1,6 @@
 class Artist 
   
-  extend Findable
+  extend Findable::ClassMethods
   attr_accessor :name, :artist, :songs
   @@all = []
   def initialize(name)
