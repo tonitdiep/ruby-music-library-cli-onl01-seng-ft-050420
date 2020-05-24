@@ -38,11 +38,11 @@ class Song
   end
 
   # def self.new_by_filename(filename)
-  #   song = self.new
-  #   song.title = filename.split(" - ")[1]
-  #   song
+  # #   song = self.new
+  # #   song.title = filename.split(" - ")[1]
+  # #   song
   # end
-  # def self.create_from_filename
-
+  # def self.create_from_filename(filename)
+  #   new_by_filename(filename)
   # end
 end
