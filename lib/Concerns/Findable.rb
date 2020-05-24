@@ -1,5 +1,4 @@
-module Findable
-  module ClassMethods
-
+module Concerns
+  module Findable
   end
 end
