@@ -5,6 +5,7 @@ class Song
     @name = name
     @@all << self
     @artist = artist if artist
+    @artist = artist 
   end
   
   def self.all
@@ -26,6 +27,6 @@ class Song
   end
   def artist=(artist)
     @artist = artist
-    @artist << (add_song)
+    artist.add_song(self)
   end
 end
