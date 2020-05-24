@@ -1,17 +1,24 @@
 class MusicImporter
+  attr_accessor :path, :files
   def initialize(path)
     @path = path
   end
   def path
-    Dir.new(self.path).each do |file|
-      files << file if file.length > 4
-    end
+
   end
 
-  # def files(list_of_filenames)
-  #   list_of_filenames.each{ |filename| Song.new_by_filename(filename) }
+  # def files
+  #   files = []
+  #   Dir.new(self.path).each do |file|
+  #     files << file if file.length > 5
+  #   end
+  #   files
+  #   end
   # end
+  
   # def import
-  #   Song.create_from_filename
+  # self.files.each do |filename|
+  #     Song.new_by_filename(filename)
+  #   end
   # end
 end
