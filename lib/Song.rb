@@ -39,9 +39,9 @@ class Song
     @@all.detect {|song| song.name == name}
   end
   def self.find_or_create_by_name(name)
-    find_by_name(name) || create_by_name(name)
+    !find_by_name(name) || !create_by_name(name)
+      
+    # binding.pry
   end
-  def create_by_name(name)
-    create_by_name(name)
-  end
+ 
 end
