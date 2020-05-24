@@ -38,15 +38,20 @@ class Song
   end
 
   def self.new_from_filename(filename)
-      # binding.pry 
-      # Song.new(filename) #artist.name.genre and expected just the name
-      song = filename
-      song.name = (name.split(" - ")[1].chomp(".mp3"))
-
-#1) get the name of the song from that string; 2) create a new instance of a song with that as the name
-    # genre = Genre.find_or_create_by_name(genre)
-    # artist = Artist.find_or_create_by_name(artist)
+  
+      #1) get the name of the song from that string
+      #2) create a new instance of a song with that as the name
+  
+    info = filename.split(" - ")
+    artist, name, genre = info[0], info[1], info[2].gsub( ".mp3" , "")
+    
+    genre = Genre.find_or_create_by_name(genre)
+    artist = Artist.find_or_create_by_name(artist)
+    Song.new(name, artist, genre)
   end
+  
+  
+
   
   def self.create_from_filename(filename)
       return new_from_filename(filename)
