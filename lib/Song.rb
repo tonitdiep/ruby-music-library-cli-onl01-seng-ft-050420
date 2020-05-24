@@ -36,23 +36,13 @@ class Song
     genre.songs << self
     end
   end
-  # def self.find_by_name(name)
-  #   @@all.detect {|song| song.name == name}
+
+  # def self.new_by_filename(filename)
+  #   song = self.new
+  #   song.title = filename.split(" - ")[1]
+  #   song
   # end
-  
-  # def self.find_or_create_by_name(name)
-  #   if self.find_by_name(name)
-  #     self.find_by_name(name)
-  #   elsif self.create(name)
-  #     self.create(name)
-  #   else
-  #     self.find_by_name(name)
-  #   end
+  # def self.create_from_filename
+
   # end
-  
-  # def self.new_from_filename
-  
-  # end
-  
-  
 end
