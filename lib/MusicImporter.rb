@@ -14,11 +14,21 @@ class MusicImporter
       files << file if file.length > 4
     end
     files
+  end
+ 
+  def import
+    self.files.each do |filename|
+      Song.create_by_filename(filename)
     end
   end
+
+
+
+
+end
   
-  def import
+  # def import
+      # Song.create_from_filename()
     # files.each do {|file| Song.create_from_filename(file)}
   
-  end
-end
+  # end
