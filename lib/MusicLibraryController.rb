@@ -2,8 +2,24 @@ require 'pry'
 class MusicLibraryController
   
   def initialize(path = "./db/mp3s")
-    binding.pry
-    # importer = MusicImporter.new(path)
-    # importer.import
+    importer = MusicImporter.new(path)
+    importer.import
   end
-end
+  
+  def call
+    input = " "
+      while input != "exit"
+        puts "Welcome to the Music Library"
+        puts "Enter List Songs."
+        puts "Enter List Artists."
+        puts "Enter List Genres."
+        puts "Enter List of Songs by Artist."
+        puts "Enter List of Songs by Genre."
+        puts "Enter Play Song."
+        puts "To quit, enter 'exit'." 
+        puts "Choose what's next in the Music Library."
+        input = gets.chomp
+      end
+  end
+  
+  end
