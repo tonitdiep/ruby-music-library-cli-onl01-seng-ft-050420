@@ -8,11 +8,12 @@ class MusicImporter
   
 
   def files
-    files = []
-    Dir.new(self.path).each do |file|
-      files << file if file.length > 4
-    end
-    files
+    Dir.glob("#{path}/*.mp3").collect {|file| file.gsub("#{path}/", "")}
+    # files = []
+    # Dir.new(self.path).each do |file|
+    #   files << file if file.length > 4
+    # end
+    # files
   end
  
   def import

@@ -14,15 +14,15 @@ class Song
   end
   
   def self.destroy_all   
-    @@all.clear
+    all.clear
   end
   
   def save
-    @@all << self
+    self.class.all << self
   end
   
   def self.create(name)
-    song = Song.new(name)
+    song = new(name)
     song.save 
     song
   end
@@ -47,7 +47,7 @@ class Song
     
     genre = Genre.find_or_create_by_name(genre)
     artist = Artist.find_or_create_by_name(artist)
-    Song.new(name, artist, genre)
+    new(name, artist, genre)
   end
   
   def self.create_from_filename(filename)
