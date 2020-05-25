@@ -36,14 +36,17 @@ class MusicLibraryController
         when 'play song'
           self.play_song
         else
-          "Please type in a valid request."
+          "Please enter in a valid request."
       end
       end
   end
   
   def list_songs
-    # binding.pry  
-    
+    Song.all.sort {|a, b| a.name <=> b.name}.each.with_index(1) do |song, i| 
+      puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}."
+      end  
   end
+  
+end
   
   end
